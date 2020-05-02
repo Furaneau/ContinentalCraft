@@ -12,7 +12,7 @@ const commandFactory = (command) => {
 };
 
 const getCommand = (name) => {
-  return commands.find((command) => command.name === name));
+  return commands.find((command) => command.name === name);
 
 };
 const getCommandList = () => {
@@ -27,6 +27,9 @@ fs.readdir('./commands/', (err, files) => {
   commandFiles.forEach((commandFiles) => {
         const command = require(`./commands/${commandFiles}`);
 
-        commands.push(command);
-  })
+        commands.push(commandFactory(command));
+  });
 });
+
+module.exports.getCommand = getCommand;
+module.exports.getCommandList = getCommandList:
