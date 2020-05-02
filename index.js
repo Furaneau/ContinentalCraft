@@ -3,6 +3,10 @@ const bot = new Discord.Client({DisableEveryone: true});
 const config = require('./config.js');
 const commands = require('./commands.js');
 
+bot.on('guildMemberAdd', membre => {
+  member.guild.channel.get('705549754167328812').send('Bienvenue');
+  console.log('+1')
+});
 
 bot.on('ready', async () => {
   console.log('Le bot est lancé.');
@@ -20,10 +24,7 @@ bot.on('message', async (msg) => {
     }
 });
 
-bot.on(guildMemberAdd', membre => {
-  member.guild.channel.get('705549754167328812').send('Bienvenue');
-  console.log('+1')
-})
+
 
 
 
