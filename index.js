@@ -20,6 +20,11 @@ bot.on('message', async (msg) => {
     }
 });
 
+bot.on(guildMemberAdd', membre => {
+  member.guild.channel.get('705549754167328812').send('Bienvenue');
+  console.log('+1')
+})
+
 
 
 bot.login(process.env.ContinentalCraft);
