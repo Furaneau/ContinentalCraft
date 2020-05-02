@@ -5,7 +5,7 @@ const commands = require('./commands.js');
 
 bot.on('guildMemberAdd', funtion (member) => {
   let embed = new Discord.RichEmbed()
-  member.guild.channel.get('705549754167328812').send('Bienvenue');
+  member.guild.channels.get('705549754167328812').send('Bienvenue');
   console.log('+1')
 });
 
