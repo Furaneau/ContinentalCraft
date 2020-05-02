@@ -10,7 +10,18 @@ bot.on('ready', async () =>{
 bot.on('message', async (msg) => {
     if(msg.content == 'Hey'){
       msg.channel.send('Coucou !!!')
+
     }
+});
+
+bot.on('message', async (msg) => {
+  if(msg.content.startWith(config.prefix))
+      cmdArray = msg.content.split()
+      cmd = cmdArray[0]
+      args = cmdArray.slice(1)
+
+      msg.channel.send(cmd)
+   }
 });
 
 bot.login(process.env.ContinentalCraft);
