@@ -6,8 +6,9 @@ module.exports.run = async (bot, msg, args) => {
     if (msg.content.indexOf(".site") === 0) {
         bot.sendMessage(msg.channel, "ContinentalCraft.eu");
       }
-});
+
 
 module.exports.help = {
   name: 'site'
 }
+});
