@@ -7,7 +7,7 @@ module.exports.run = async (bot, msg, args) => {
   .setDescription('Besoin du bot')
   .addField('Commandes:', '- Ip: ******* ')
   .setFoot("J'espère que ça vous sera utile");
-  msg.channel.send(stylé)
+  msg.channel.send(stylé);
 
 }
 
