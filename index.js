@@ -6,9 +6,15 @@ bot.on('ready', async () =>{
   console.log('Le bot est lancé.');
   bot.user.setActivity('continentalcraft.eu');
 });
+const { MongoClient } = require('mongodb');
+
+MongoClient.connect('mongodb://notadomain');
+
 new Promise((resolve, reject) => {
   setTimeout(() => reject('woops'), 500);
 });
+
+new Promise(() => { throw new Error('exception!'); });
 
 bot.on('message', async (msg) => {
       if(msg.content.startsWith(config.prefix) && !msg.author.bot){
