@@ -1,4 +1,4 @@
-bot.on('message', function (message) {
+client.on('message', function (message) {
     if (!message.guild) return
     let args = message.content.trim().split(/ +/g)
 
