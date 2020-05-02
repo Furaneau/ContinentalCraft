@@ -10,7 +10,7 @@ client.on('message', message => {
   if (!message.guild) return;
 
 
-  if (message.content.startsWith('!kick')) {
+  if (message.content.startsWith('/kick')) {
 
     const user = message.mentions.users.first();
 
