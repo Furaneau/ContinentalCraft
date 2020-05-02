@@ -21,6 +21,6 @@ module.exports.run = async(client, message, args) => {
   });
 };
 
-module.exports.help = {
+module.exports.config = {
   name: "kick"
 };
