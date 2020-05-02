@@ -32,4 +32,4 @@ fs.readdir('./commands/', (err, files) => {
 });
 
 module.exports.getCommand = getCommand;
-module.exports.getCommandList = getCommandList:
+module.exports.getCommandList = getCommandList;
