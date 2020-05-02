@@ -20,13 +20,6 @@ bot.on('message', async (msg) => {
     }
 });
 
-server.post('/api/messages', [
-    function(req,res, next){
-        console.log('RemoteAddress: ', req.headers['x-forwarded-for'] || req.connection.remoteAddress);
-        next();
-    },
-    connector.listen()
-]);
 
 
 bot.login(process.env.ContinentalCraft);
