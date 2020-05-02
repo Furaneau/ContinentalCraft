@@ -4,7 +4,7 @@ const confid = require('./config.js');
 
 bot.on('ready', async () =>{
   console.log('Le bot est lancé.');
-  bot.user.setActivity('continentalcraft.eu');
+  bot.user.substring(1).setActivity('continentalcraft.eu');
 });
 
 bot.on('message', async (msg) => {
@@ -16,7 +16,7 @@ bot.on('message', async (msg) => {
 
 bot.on('message', async (msg) => {
   if(msg.content.startWith(config.prefix && !msg.author.bot){
-      cmdArray = msg.content.split()
+      cmdArray = msg.content.substring(1).split()
       cmd = cmdArray[0]
       args = cmdArray.slice(1)
 
