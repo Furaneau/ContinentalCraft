@@ -20,8 +20,6 @@ bot.on('message', async (msg) => {
     }
 });
 
-const Discord = require('discord.js');
-
 module.exports.run = async(client, message, args) => {
 
   if(!message.guild.member(message.author).hasPermission("KiCK_MEMBERS")) return message.channel.send(`Vous avez pas les perm`);
