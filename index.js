@@ -20,29 +20,4 @@ bot.on('message', async (msg) => {
     }
 });
 
-bot.on('message', async (msg) => {
-
-  if(!msg.guild.member(msg.author).hasPermission("KiCK_MEMBERS")) return msg.channel.send(`Vous avez pas les perm`);
-
-  if(msg.mention.user.size === 0) {
-    return msg.channel.send(`Aucune personne`);
-  }
-
-  let kick = msg.guild.member(msg.mention.user.first());
-
-  if(!kick){
-    return msg.channel.send(`Pas de joueur`);
-  }
-
-  if(!msg.guild.member(client.user).hasPermission("KiCK_MEMBERS"))return msg.channel.send(`Manque de permision`);
-
-  kick.kick().then(member => {
-    msg.channel.send(`${msg.user.username} est kick par ${msg.author.username}`);
-  });
-});
-
-module.exports = config {
-  name: "kick"
-};
-
 bot.login(process.env.ContinentalCraft);
