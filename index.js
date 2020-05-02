@@ -4,7 +4,7 @@ const confid = require('./config.js');
 
 bot.on('ready', async () =>{
   console.log('Le bot est lancé.');
-  bot.user.substring(1).setActivity('continentalcraft.eu');
+  bot.user.setActivity('continentalcraft.eu');
 });
 
 bot.on('message', async (msg) => {
