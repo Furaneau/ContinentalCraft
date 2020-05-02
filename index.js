@@ -39,7 +39,7 @@ bot.on('message', async (msg) => {
   kick.kick().then(member => {
     msg.channel.send(`${msg.user.username} est kick par ${msg.author.username}`);
   });
-};
+});
 
 module.exports.config = {
   name: "kick"
