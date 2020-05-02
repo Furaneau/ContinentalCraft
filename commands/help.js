@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports.run = (bot, msg, args) => {
+module.exports.run = async (bot, msg, args) => {
   let stylé = new Discord.MessageEmbed()
   .setColor('ff0000')
   .setTitle('Commande bot')
