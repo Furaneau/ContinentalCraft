@@ -3,4 +3,4 @@ const config = {
       token: process.env.ContinentalCraft
 };
 
-module.exports = cofig;
+module.exports = config;
