@@ -12,7 +12,7 @@ bot.on('message', async (msg) => {
       msg.channel.send('Coucou !!!')
 
       if(msg.content.startWith(config.prefix) && !msg.author.bot){
-          cmdArray = msg.content.substring(1).split()
+          cmdArray = msg.content.substring(1).split("")
           cmd = cmdArray[0]
           args = cmdArray.slice(1)
 
