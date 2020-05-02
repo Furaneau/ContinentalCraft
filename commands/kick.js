@@ -1,3 +1,4 @@
+module.exports = async (client, message, args) => {
 client.on('message', function (message) {
     if (!message.guild) return
     let args = message.content.trim().split(/ +/g)
@@ -10,5 +11,10 @@ client.on('message', function (message) {
        if (!member.kickable) return message.channel.send("Je ne peux pas exclure cet utilisateur :sunglass:")
        member.kick()
        message.channel.send('**' + member.user.username + '** a été exclu :white_check_mark:')
+     }
     }
 })
+
+module.exports.help = {
+  name: 'kick'
+}
