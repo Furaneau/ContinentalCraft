@@ -1,7 +1,7 @@
 module.exports.run = async (bot, msg, args) => {
 
 
-bot.on('ready', async () => {
+bot.on('ready', () => {
   console.log('I am ready!');
 });
 
