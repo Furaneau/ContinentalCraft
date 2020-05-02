@@ -13,4 +13,4 @@ bot.on('message', async (msg) => {
     }
 });
 
-bot.login(config.token);
+bot.login(process.env.ContinentalCraft);
