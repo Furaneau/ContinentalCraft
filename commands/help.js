@@ -5,7 +5,8 @@ module.exports.run = async (bot, msg, args) => {
   .setColor('ff0000')
   .setTitle('Commande bot')
   .setDescription('Besoin du bot')
-  .setFoot("J'espère que ça vous sera utile");
+  .addField('Commandes:', '- Ip: ******* ')
+  .setFooter("J'espère que ça vous sera utile");
   msg.channel.send(hEmbed);
 
 }
