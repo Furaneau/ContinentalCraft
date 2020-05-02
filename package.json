@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "DiscordBot's",
   "main": "index.js",
-  "repository": "https://github.com/Furaneau/ContinentalCraft",
+  "repository": "https://git.heroku.com/continentalcraft.git",
   "author": "Furaneau",
   "license": "MIT",
   "scripts": {
