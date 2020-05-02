@@ -5,7 +5,7 @@ module.exports.run = async (bot, msg, args) => {
   .setColor('ff0000')
   .setTitle('ContinentalCraft.eu')
   .setDescription("Besoin d'aide")
-  .addField('Commandes:', '- Ip: ******* ')
+  .addField('Commandes:', ' ')
   .setFooter("J'espère que ça vous sera utile");
   msg.channel.send(hEmbed);
 
