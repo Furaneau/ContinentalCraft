@@ -13,7 +13,7 @@ client.on('message', function (message) {
        message.channel.send('**' + member.user.username + '** a été exclu :white_check_mark:')
      }
     }
-})
+});
 
 module.exports.help = {
   name: 'kick'
