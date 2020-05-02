@@ -11,17 +11,14 @@ bot.on('message', async (msg) => {
     if(msg.content == 'Hey'){
       msg.channel.send('Coucou !!!')
 
+      if(msg.content.startWith(config.prefix) && !msg.author.bot){
+          cmdArray = msg.content.substring(1).split()
+          cmd = cmdArray[0]
+          args = cmdArray.slice(1)
+
+          msg.channel.send(cmd)
+      }
     }
-});
-
-bot.on('message', async (msg) => {
-  if(msg.content.startWith(config.prefix) && !msg.author.bot){
-      cmdArray = msg.content.substring(1).split()
-      cmd = cmdArray[0]
-      args = cmdArray.slice(1)
-
-      msg.channel.send(cmd)
-   }
 });
 
 bot.login(process.env.ContinentalCraft);
