@@ -3,7 +3,8 @@ const bot = new Discord.Client({DisableEveryone: true});
 const config = require('./config.js');
 const commands = require('./commands.js');
 
-bot.on('guildMemberAdd', async (msg) => {
+bot.on('guildMemberAdd', funtion (member) => {
+  let embed = new Discord.RichEmbed()
   member.guild.channel.get('705549754167328812').send('Bienvenue');
   console.log('+1')
 });
