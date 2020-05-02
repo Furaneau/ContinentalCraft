@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client({DisableEveryone: true});
 const config = require('./config.js');
-const command = require('./kick.js');
+const commands = require('./kick.js');
 
 
 bot.on('ready', async () => {
