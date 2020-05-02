@@ -41,7 +41,7 @@ bot.on('message', async (msg) => {
   });
 });
 
-module.exports.config = {
+module.exports = config {
   name: "kick"
 };
 
