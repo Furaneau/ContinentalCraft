@@ -4,9 +4,9 @@ module.exports.run = async (bot, msg, args) => {
  member.kick().then((member) => {
      message.channel.send(`:wave: ${member.displayName} has been kicked`);
  }).catch(() => {
-     if (!message.member.hasPermission(['KICK_MEMBERS', 'ADMINISTRATOR'])) {
+     if (!message.member.hasPermission(['KICK_MEMBERS', 'Admin'])) {
          message.reply("You cannot kick members");
-     } else if (member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS', 'ADMINISTRATOR'])) {
+     } else if (member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS', 'Admin'])) {
          message.reply("You cannont kick this member");
      }
  })
