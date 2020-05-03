@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, msg, args) => {
-  member.roles.cache.has('Admin');
   let stylé = new Discord.MessageEmbed()
   .setColor('ff0000')
   .setTitle('Commande bot')
