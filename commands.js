@@ -4,6 +4,7 @@ const commands =[];
 const commandFactory = (command) => {
   const {run} = command;
   const {name} = command.help;
+  const {name} = command.kick;
 
   return {
     name,
