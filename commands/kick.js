@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     if(member) {
       member.kick(' ').then(() => {
         message.rely(`${user.tag} a été kick`)
-      }).catch(err => {
+      }).catch(err) => {
         message.reply("Vous n'avez pas les perm")
       })
 
