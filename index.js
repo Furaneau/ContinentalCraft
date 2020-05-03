@@ -1,22 +1,54 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client({DisableEveryone: true});
-const config = require('./config.js');
-const commands = require('./commands.js');
+const { Client, Collection } = require("discord.js");
+const { config } = require("dotenv");
+const fs = require("fs");
 
-bot.on('ready', async () => {
-  console.log('Le bot est lancé.');
-  bot.user.setActivity('continentalcraft.eu');
+const client = new Client({
+    disableEveryone: true
 });
 
-bot.on('message', async (msg) => {
-      if(msg.content.startsWith(config.prefix) && !msg.author.bot){
-          cmdArray = msg.content.substring(config.prefix.length).split(" ")
-          cmd = cmdArray[0]
-          args = cmdArray.slice(1)
+client.commands = new Collection();
+client.aliases = new Collection();
 
-          let command =commands.getCommand(cmd);
-          if(command) command.run(bot, msg, args);
-    }
+client.categories = fs.readdirSync("./commands/");
+
+config({
+    path: __dirname + "/.env"
 });
 
-bot.login(process.env.ContinentalCraft);
+["command"].forEach(handler => {
+    require(`./handlers/${handler}`)(client);
+});
+
+client.on("ready", () => {
+    console.log(`Hi, ${client.user.username} En ligne!`);
+
+    client.user.setPresence({
+        status: "online",
+        game: {
+            name: "me getting developed",
+            type: "STREAMING"
+        }
+    });
+});
+
+client.on("message", async message => {
+    const prefix = "_";
+
+    if (message.author.bot) return;
+    if (!message.guild) return;
+    if (!message.content.startsWith(prefix)) return;
+    if (!message.member) message.member = await message.guild.fetchMember(message);
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const cmd = args.shift().toLowerCase();
+
+    if (cmd.length === 0) return;
+
+    let command = client.commands.get(cmd);
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
+
+    if (command)
+        command.run(client, message, args);
+});
+
+client.login(process.env.ContinentalCraft);
