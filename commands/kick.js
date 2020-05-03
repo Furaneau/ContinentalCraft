@@ -1,21 +1,28 @@
 module.exports.run = async (bot, msg, args) => {
+  
+  let member = message.mentions.members.first();
+      member.kick().then((member) => {
+          message.channel.send(`:wave: ${member.displayName} has been kicked`);
+      }).catch(() => {
+          if (!message.member.hasPermission(['KICK_MEMBERS', 'Admin'])) {
+              message.reply("You cannot kick members");
+          } else if (member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS', 'Admin'])) {
+              message.reply("You cannont kick this member");
+          }
+      })
+  }
+  if (message.content.startsWith(`${prefix}ban`)) {
 
-if (message.author.bot) return;
-if (!message.content.startsWith(prefix)) return;
-const serverQueue = queue.get(message.guild.id);
+      let member = message.mentions.members.first();
+      member.ban().then((member) => {
+          message.channel.send(`:wave: ${member.displayName} has been kicked`);
+      }).catch(() => {
+          if (!message.member.hasPermission(['BAN_MEMBERS', 'Admin'])) {
+              message.reply("You cannot ban members");
+          } else if (member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS', 'Admin'])) {
+              message.reply("You cannont ban this member");
+          }
+      })
+  }
 
-if (message.content.startsWith(`${prefix}play`)) {
-    execute(message, serverQueue);
-    return;
-} else if (message.content.startsWith(`${prefix}skip`)) {
-    skip(message, serverQueue);
-    return;
-} else if (message.content.startsWith(`${prefix}stop`)) {
-    stop(message, serverQueue);
-    return;
-} else {
-    message.channel.send("You need to enter a valid command!");
-}
-
-bot.login(process.env.ContinentalCraft);
 }
