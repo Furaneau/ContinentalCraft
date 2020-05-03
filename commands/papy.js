@@ -1,12 +1,11 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, msg, args) => {
-var bot = new Discord.Client();
-bot.on('message', function (message) {
-  if (message.content == '.Papy') {
-    message.reply("Papy gelus");
-  }
-});
-}
+
+  bot.on('message', message => {
+      if (message.content === 'papy') {
+      message.channel.sendMessage('Raconte nous une histoire');
+    }
+  });
 module.exports.help = {
   name: 'Papy'
 }
