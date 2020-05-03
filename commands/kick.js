@@ -1,4 +1,5 @@
 module.exports.run = async (bot, msg, args) => {
+
   let member = message.mentions.members.first();
  member.kick().then((member) => {
      message.channel.send(`:wave: ${member.displayName} has been kicked`);
@@ -10,8 +11,6 @@ module.exports.run = async (bot, msg, args) => {
      }
  })
 }
-
-  }
 
   module.exports.help = {
     name: 'kick'
