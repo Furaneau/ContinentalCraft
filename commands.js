@@ -5,7 +5,6 @@ const commandFactory = (command) => {
   const {run} = command;
   const {name} = command.help;
 
-
   return {
     name,
     run
